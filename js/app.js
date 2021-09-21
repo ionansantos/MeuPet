@@ -1,0 +1,1 @@
+angular.module("meuPet", ["ngRoute", "ngAnimate", "ngMessages"])

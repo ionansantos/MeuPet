@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col">
+            <h1>Bem vindo</h1>
+            <form class="form-floating mt-5" name="clienteForm">
+                <input type="text" class="form-control mb-2" id="floatingInput" ng-model="cliente.nome" required>
+                <label for="floatingInput">Nome Do Cliente</label>
+                <select class="form-select mb-2" ng-options="raca.nome for raca in racas" ng-model="cliente.raca"
+                    ng-required="true">
+                    <option value="">Raça do Cachorro</option>
+                </select>
+                <div class="form-floating mb-2">
+                    <input type="Number" class="form-control" id="floatingPassword" ng-model="cliente.idade" required>
+                    <label for="floatingPassword">Idade</label>
+                </div>
+
+                <select class="form-select" ng-model="cliente.servico"
+                    ng-options="servico.nome + ' ( ' + (servico.preco | currency) + ' )' for servico in servicos"
+                    ng-required="true">
+                    <option value="">Serviço</option>
+                </select>
+                <textarea class="form-control mt-3" ng-if="cliente.servico.tipo === 'consulta'"
+                    ng-model="cliente.servico.observacoes" label="Sintomas" outlined required></textarea>
+                <button class="btn btn-primary mt-3 mb-4" ng-click="adicionaCliente(cliente)"
+                    ng-disabled="clienteForm.$invalid">Cadastrar
+                    Cliente</button>
+            </form>
+        </div>
+        <div class="col">
+            <div ng-include="'view/veterinario.html'"></div>
+            <div class="col">
+                <div ng-include="'view/banho.html'"></div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div ng-include="'view/balanco.html'"></div>
+        </div>
+    </div>

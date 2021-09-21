@@ -1,0 +1,21 @@
+<div ng-controller="meuPetCtrl">
+    <div class="container">
+
+        <div class="row justify-content-center">
+            <!-- <div class="alert alert-danger mt-4">
+                <h5 ng-i="menssage" class="text-center alert">{{message}}</h5>
+            </div> -->
+            <div ng-if="message"  ui-alert></div>
+
+            <div ng-repeat="produto in produtos" class="card m-3" style="width: 18rem;">
+                <img ng-src="{{produto.foto}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{produto.nome}}</h5>
+                    <p class="card-text">{{produto.preco | currency}}</p>
+                    <a href="#" class="btn btn-primary">Adicionar</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

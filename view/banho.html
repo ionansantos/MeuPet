@@ -1,0 +1,28 @@
+<h3>Fila do Banho</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">Nome</th>
+            <th scope="col">Idade</th>
+            <th scope="col">Raça</th>
+            <th scope="col">Tosa?</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="banho in ClientesBanho">
+            <th></th>
+            <td>{{banho.nome}}</td>
+            <td>{{banho.idade}}</td>
+            <td>{{banho.raca.nome}}</td>
+            <td>{{banho.servico.extra}}</td>
+            <td>
+                <button class="btn btn-danger" ng-click="finalizaBanho(banho)">Finalizar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div ng-if="ClientesBanho.length === 0">
+    <p class="text-center">Nenhum Cliente na Fila</p>
+</div>

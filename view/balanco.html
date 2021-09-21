@@ -1,0 +1,34 @@
+<h2>Serviços do Dia</h2>
+<table class="table" ng-if="balancos.length > 0">
+    <thead>
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Idade</th>
+            <th scope="col">Raça</th>
+            <th scope="col">Serviço</th>
+            <th scope="col">Valor</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="balanco in balancos">
+            <td>{{balanco.nome}}</td>
+            <td>{{balanco.idade}}</td>
+            <td>{{balanco.raca.nome}}</td>
+            <td>{{balanco.servico.nome}}</td>
+            <th ng-init="$parent.total = $parent.total + balanco.servico.preco">R$:{{ balanco.servico.preco}}</th>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>R$:{{ total}}</td>
+        </tr>
+    </tbody>
+</table>
+<div  ng-if="balancos.length === 0">
+    <p class="text-center">Nenhum Serviço Finalizado</p>
+</div>
+
+
+ 

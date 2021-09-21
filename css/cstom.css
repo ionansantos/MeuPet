@@ -1,0 +1,68 @@
+.navbar-collapse{
+    flex-grow: 0;
+   
+   
+    
+}
+.container-fluid{
+    max-width: 100%;
+   width: 1200px;
+}
+
+thead, tbody, tfoot, tr, td, th{
+    border-style: none;  
+}
+.table{
+    box-shadow: 1px 4px 8px rgba(192, 192, 192, 0.884);
+    border-radius: .3rem;
+}
+tbody{
+    background-color: #e4f3ff;
+}
+
+
+
+
+ /* UI CSS */
+
+ /* UI ALERT */
+
+ .ui-alert{
+    background-color: #f2dede;
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 1rem;
+    text-align: center;
+ }
+.ui-alert-title{
+    font-family:cursive, Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #af4348;
+}
+.ui-alert-message{
+    font-family:cursive, Arial, Helvetica, sans-serif;
+}
+
+
+
+
+
+/* Animate */
+
+/* The starting CSS styles for the enter animation */
+.view.ng-enter {
+    transition:0.5s linear all;
+    transform: translateY(30px);
+    opacity:0;
+  }
+  
+  /* The finishing CSS styles for the enter animation */
+.view.ng-enter.ng-enter-active {
+    transform: translateY(0px);
+    opacity:1;
+  }
+
+
+
+
