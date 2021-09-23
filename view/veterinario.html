@@ -1,28 +1,31 @@
-<h3>Fila de Consultas</h3>
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col"></th>
-            <th scope="col">Nome</th>
-            <th scope="col">Idade</th>
-            <th scope="col">Raça</th>
-            <th scope="col">Sintomas</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr ng-repeat="cliente in ClientesConsulta">
-            <th></th>
-            <td>{{cliente.nome}}</td>
-            <td>{{cliente.idade}}</td>
-            <td>{{cliente.raca.nome}}</td>
-            <td>{{cliente.servico.observacoes}}</td>
-            <td>
-                <button class="btn btn-danger" ng-click="finalizaConsulta(cliente)">Finalizar</button>
-            </td>
-        </tr>
-    </tbody>
-</table>
-<div ng-if="ClientesConsulta.length === 0">
-    <p class="text-center">Nenhum Cliente na Fila</p>
+<div>
+    <h3>Fila de Consultas</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Nome</th>
+                <th scope="col">Idade</th>
+                <th scope="col">Raça</th>
+                <th scope="col">Sintomas</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="(index,cliente) in ClientesConsulta">
+                <th></th>
+                <td>{{cliente.nome}}</td>
+                <td>{{cliente.idade}}</td>
+                <td>{{cliente.raca.nome}}</td>
+                <td>{{cliente.servico.observacoes}}</td>
+                <td>
+                    <button class="btn btn-danger" ng-click="finalizaConsulta(index,cliente)">Finalizar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div ng-if="ClientesConsulta.length === 0">
+        <p class="text-center">Nenhum Cliente na Fila</p>
+    </div>
 </div>
+    

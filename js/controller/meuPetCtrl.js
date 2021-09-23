@@ -31,17 +31,18 @@ angular.module("meuPet").controller("meuPetCtrl", function ($scope, lojaApi, rac
         }
 
         delete $scope.cliente
+        console.log($scope.ClientesBanho)
     }
 
 
-    $scope.finalizaConsulta = function (cliente) {
+    $scope.finalizaConsulta = function (index, cliente) {
         $scope.balancos.push(cliente)
-        $scope.ClientesConsulta.splice(cliente, 1)
-
+        $scope.ClientesConsulta.splice(index, 1)
+        
     }
-    $scope.finalizaBanho = function (banho) {
+    $scope.finalizaBanho = function (index, banho) {
         $scope.balancos.push(banho)
-        $scope.ClientesBanho.splice(banho, 1)
+        $scope.ClientesBanho.splice(index, 1)
     }
 
 

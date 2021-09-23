@@ -10,7 +10,7 @@
 }
 
 thead, tbody, tfoot, tr, td, th{
-    border-style: none;  
+    border-color: rgba(0, 0, 0, 0.247);  
 }
 .table{
     box-shadow: 1px 4px 8px rgba(192, 192, 192, 0.884);
