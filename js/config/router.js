@@ -3,10 +3,14 @@ angular.module("meuPet").config(function ($routeProvider, $locationProvider) {
 	
 	$routeProvider.when("/", {
 		templateUrl: "view/loja.html",
-		controller: "meuPetCtrl",
+		controller: "lojaCtrl",
 	});
 	$routeProvider.when("/servicos", {
 		templateUrl: "view/servicos.html",
 		controller:"meuPetCtrl",
 	});
+	// $routeProvider.when("/servicos", {
+	// 	templateUrl: "view/servicos.html",
+	// 	controller:"meuPetCtrl",
+	// });
 });

@@ -1,6 +1,5 @@
-angular.module("meuPet").controller("meuPetCtrl", function ($scope, lojaApi, racaApi, servicoApi) {
+angular.module("meuPet").controller("meuPetCtrl", function ($scope, racaApi, servicoApi) {
 
-    $scope.produtos = []
     $scope.ClientesBanho = []
     $scope.ClientesConsulta = []
     $scope.balancos = []
@@ -31,7 +30,7 @@ angular.module("meuPet").controller("meuPetCtrl", function ($scope, lojaApi, rac
         }
 
         delete $scope.cliente
-        console.log($scope.ClientesBanho)
+        delete $scope.cliente.observacoes
     }
 
 
@@ -47,21 +46,13 @@ angular.module("meuPet").controller("meuPetCtrl", function ($scope, lojaApi, rac
 
 
 
-    //  carregando dados da Loja
-
-    const carregaProdutos = function () {
-        lojaApi.getProdutos.then((response) => {
-            $scope.produtos = response.data
-            // console.log(response)
-        }).catch(function () {
-            $scope.message = "Serviço fora do ar"
-        })
-    }
+    //  carrega lista de servicos
     const carregaServico = function () {
         servicoApi.getServico.then((response) => {
             $scope.servicos = response.data
         })
     }
+    // carrega lista de raças
     const carregaRaca = function () {
         racaApi.getRaca.then((response) => {
             $scope.racas = response.data
@@ -72,5 +63,4 @@ angular.module("meuPet").controller("meuPetCtrl", function ($scope, lojaApi, rac
 
     carregaRaca()
     carregaServico()
-    carregaProdutos()
 })
