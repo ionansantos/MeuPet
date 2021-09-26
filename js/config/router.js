@@ -1,16 +1,19 @@
 angular.module("meuPet").config(function ($routeProvider, $locationProvider) {
 	$locationProvider.hashPrefix('');
 	
-	$routeProvider.when("/", {
+	$routeProvider
+	
+	.when("/produtos", {
 		templateUrl: "view/loja.html",
 		controller: "lojaCtrl",
-	});
-	$routeProvider.when("/servicos", {
+	})
+	.when("/servicos", {
 		templateUrl: "view/servicos.html",
 		controller:"meuPetCtrl",
+	})
+	.when("/produtos/:produto/:produtoId", {
+		templateUrl: "/view/produto.html",
+		controller:"produtoInfoCtrl",
 	});
-	// $routeProvider.when("/servicos", {
-	// 	templateUrl: "view/servicos.html",
-	// 	controller:"meuPetCtrl",
-	// });
 });
+

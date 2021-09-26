@@ -1,7 +1,7 @@
-angular.module("meuPet").controller("lojaCtrl", function ($scope, lojaApi) {
+angular.module("meuPet").controller("lojaCtrl", function ($scope, lojaApi){
     
     $scope.produtos = []
-
+    $scope.produtoInfo = []
     
     const carregaProdutos = function () {
         lojaApi.getProdutos.then((response) => {
