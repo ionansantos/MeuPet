@@ -1,10 +1,13 @@
 angular.module("meuPet").factory("lojaApi", function ($http, config) {
-	let getProdutos = function () {
+	let _getProdutos = function () {
 		return $http.get(config.baseUrl + "/produtos");
 	};
-
+	let _getProduto = function(id){
+		return $http.get(config.baseUrl + "/produtos/" + id)
+	}
 	return {
-		getProdutos: getProdutos()
+		getProdutos: _getProdutos,
+		getProduto: _getProduto,
 	};
 });
 
